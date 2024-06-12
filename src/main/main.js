@@ -2,7 +2,7 @@ console.log("working;")
 const { app, BrowserWindow ,Menu,} = require('electron')
 const path=require("path")
 const url=require("url")
-const {MainMenu}=require("./common/mainMenu")
+const {MainMenu}=require("../common/mainMenu")
 
 let win
 const createWindow = () => {
@@ -29,13 +29,3 @@ app.whenReady().then(() => {
     if (process.platform !== 'darwin') app.quit()
   })
 
-
- /*ipcMain.on('fetchData', async (event, url) => {
-      const response = await fetch(url); // Use fetch directly since it's available in the renderer process
-      const data = await response.json();
-      event.reply('dataReceived', data);
-    });
-  
-    win.webContents.on('did-finish-load', () => {
-      win.webContents.send('fetchData','https://jsonplaceholder.typicode.com/todos/1"');
-    });*/
